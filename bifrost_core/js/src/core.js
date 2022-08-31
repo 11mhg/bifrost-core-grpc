@@ -1,51 +1,31 @@
-const { grpc, isAnyExtension } = require('./proto');
+const { grpc } = require('./proto');
 const protoLoader = require('@grpc/proto-loader');
 const protobufjs = require('protobufjs');
+const { parseStruct, getValueFromObj, parseListValue } = require('./parsers');
+const vm = require('node:vm');
 
-
-function parse_value(any_obj)
-{
-    const type = any_obj['type_url'];
-    const value = any_obj['value'];
-
-    console.log(Object.getOwnPropertyNames(protoLoader));
-
-    return any_obj;
-}
-
-
+var context = global;
+vm.createContext(context);
 
 function execute(call)
 {
     const inputData = call.request;
-
-    console.log(inputData);
-
     const code = inputData.code;
-    var dataMessage = inputData.data;
-
-    for (const key in dataMessage)
     {
-        if (isAnyExtension(dataMessage[key]))
+        var dataMessage = inputData.data.fields;
+        var data = parseStruct(dataMessage);
+        for (let prop in data)
         {
-            dataMessage[key] = parse_value(dataMessage[key]);
+            context[prop] = data[prop];
         }
     }
 
-    var outputData = {
-        stdout: "",
-        stderr: "",
-        data: {
-            done: true
-        }
-    };
+    console.log(code);
+    vm.runInContext("console.log('hello!')", context);
 
-    for (let i=0; i < 10; i++)
-    {
-        call.write(
-            outputData
-        );
-    }
+    //console.log(data);
+
+
     call.end();
 }
 

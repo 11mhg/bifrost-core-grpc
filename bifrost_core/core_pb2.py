@@ -12,63 +12,37 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ncore.proto\x1a\x19google/protobuf/any.proto\"\x80\x01\n\tInputData\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\"\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x14.InputData.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\"\x94\x01\n\nOutputData\x12\x0e\n\x06stdout\x18\x01 \x01(\t\x12\x0e\n\x06stderr\x18\x02 \x01(\t\x12#\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32\x15.OutputData.DataEntry\x1a\x41\n\tDataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12#\n\x05value\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any:\x02\x38\x01\x32\x30\n\x06\x43oreJS\x12&\n\x07\x45xecute\x12\n.InputData\x1a\x0b.OutputData\"\x00\x30\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\ncore.proto\x1a\x1cgoogle/protobuf/struct.proto\"@\n\tInputData\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12%\n\x04\x64\x61ta\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"S\n\nOutputData\x12\x0e\n\x06stdout\x18\x01 \x01(\t\x12\x0e\n\x06stderr\x18\x02 \x01(\t\x12%\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct20\n\x06\x43oreJS\x12&\n\x07\x45xecute\x12\n.InputData\x1a\x0b.OutputData\"\x00\x30\x01\x62\x06proto3')
 
 
 
 _INPUTDATA = DESCRIPTOR.message_types_by_name['InputData']
-_INPUTDATA_DATAENTRY = _INPUTDATA.nested_types_by_name['DataEntry']
 _OUTPUTDATA = DESCRIPTOR.message_types_by_name['OutputData']
-_OUTPUTDATA_DATAENTRY = _OUTPUTDATA.nested_types_by_name['DataEntry']
 InputData = _reflection.GeneratedProtocolMessageType('InputData', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _INPUTDATA_DATAENTRY,
-    '__module__' : 'core_pb2'
-    # @@protoc_insertion_point(class_scope:InputData.DataEntry)
-    })
-  ,
   'DESCRIPTOR' : _INPUTDATA,
   '__module__' : 'core_pb2'
   # @@protoc_insertion_point(class_scope:InputData)
   })
 _sym_db.RegisterMessage(InputData)
-_sym_db.RegisterMessage(InputData.DataEntry)
 
 OutputData = _reflection.GeneratedProtocolMessageType('OutputData', (_message.Message,), {
-
-  'DataEntry' : _reflection.GeneratedProtocolMessageType('DataEntry', (_message.Message,), {
-    'DESCRIPTOR' : _OUTPUTDATA_DATAENTRY,
-    '__module__' : 'core_pb2'
-    # @@protoc_insertion_point(class_scope:OutputData.DataEntry)
-    })
-  ,
   'DESCRIPTOR' : _OUTPUTDATA,
   '__module__' : 'core_pb2'
   # @@protoc_insertion_point(class_scope:OutputData)
   })
 _sym_db.RegisterMessage(OutputData)
-_sym_db.RegisterMessage(OutputData.DataEntry)
 
 _COREJS = DESCRIPTOR.services_by_name['CoreJS']
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _INPUTDATA_DATAENTRY._options = None
-  _INPUTDATA_DATAENTRY._serialized_options = b'8\001'
-  _OUTPUTDATA_DATAENTRY._options = None
-  _OUTPUTDATA_DATAENTRY._serialized_options = b'8\001'
-  _INPUTDATA._serialized_start=42
-  _INPUTDATA._serialized_end=170
-  _INPUTDATA_DATAENTRY._serialized_start=105
-  _INPUTDATA_DATAENTRY._serialized_end=170
-  _OUTPUTDATA._serialized_start=173
-  _OUTPUTDATA._serialized_end=321
-  _OUTPUTDATA_DATAENTRY._serialized_start=105
-  _OUTPUTDATA_DATAENTRY._serialized_end=170
-  _COREJS._serialized_start=323
-  _COREJS._serialized_end=371
+  _INPUTDATA._serialized_start=44
+  _INPUTDATA._serialized_end=108
+  _OUTPUTDATA._serialized_start=110
+  _OUTPUTDATA._serialized_end=193
+  _COREJS._serialized_start=195
+  _COREJS._serialized_end=243
 # @@protoc_insertion_point(module_scope)

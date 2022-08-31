@@ -28,16 +28,9 @@ function getServer(functionDefs)
     return server;
 }
 
-function isAnyExtension(obj)
-{
-    return ('type_url' in obj) && (typeof (obj)['type_url'] === 'string');
-}
-
-
 
 module.exports = {
     grpc: grpc,
     protoDescriptor: protoDescriptor,
-    getServer: getServer,
-    isAnyExtension: isAnyExtension,
+    getServer: getServer
 };
